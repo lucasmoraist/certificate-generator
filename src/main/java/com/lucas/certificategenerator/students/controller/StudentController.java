@@ -9,7 +9,7 @@ import com.lucas.certificategenerator.students.dto.VerifyHasCertificationDTO;
 import com.lucas.certificategenerator.students.service.VerifyIfHasCertificationService;
 
 @RestController
-@RequestMapping("/nwl/students")
+@RequestMapping("/nlw/students")
 public class StudentController {
 
     private final VerifyIfHasCertificationService service;
