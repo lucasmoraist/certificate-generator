@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.lucas.certificategenerator.students.model.AnswersCertifications;
 import com.lucas.certificategenerator.students.model.Student;
 
 import jakarta.persistence.Column;
