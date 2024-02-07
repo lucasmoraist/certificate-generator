@@ -1,9 +1,9 @@
-package com.lucas.certificategenerator.students.service;
+package com.lucas.certificategenerator.certification.service;
 
 import org.springframework.stereotype.Service;
 
-import com.lucas.certificategenerator.students.dto.VerifyHasCertificationDTO;
-import com.lucas.certificategenerator.students.repository.CertificationStudentRepository;
+import com.lucas.certificategenerator.certification.dto.VerifyHasCertificationDTO;
+import com.lucas.certificategenerator.certification.repository.CertificationStudentRepository;
 
 @Service
 public class VerifyIfHasCertificationService {

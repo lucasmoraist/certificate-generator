@@ -1,10 +1,13 @@
-package com.lucas.certificategenerator.students.model;
+package com.lucas.certificategenerator.certification.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.lucas.certificategenerator.students.model.AnswersCertifications;
+import com.lucas.certificategenerator.students.model.Student;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
