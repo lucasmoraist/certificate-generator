@@ -15,7 +15,7 @@ public class VerifyIfHasCertificationService {
     }
 
     public boolean execute(VerifyHasCertificationDTO dto) {
-        var result = this.repository.findByEmailAndTechnology(dto.email(), dto.technology());
+        var result = this.repository.findByEmailAndTechnology(dto.getEmail(), dto.getTechnology());
 
         if (!result.isEmpty()) {
             return true;
