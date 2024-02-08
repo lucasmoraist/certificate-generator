@@ -1,3 +1,13 @@
 package com.lucas.certificategenerator.certification.dto;
 
-public record VerifyHasCertificationDTO(String email, String technology) {} 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class VerifyHasCertificationDTO {
+    private String email;
+    private String technology;
+} 
