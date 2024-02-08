@@ -6,8 +6,10 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lucas.certificategenerator.students.model.Student;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,6 +29,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity(name = "t_cg_certification")
 @Table(name = "t_cg_certification")
+@Builder
 public class CertificationStudent {
     
     @Id @GeneratedValue(strategy = GenerationType.UUID)
@@ -44,8 +48,9 @@ public class CertificationStudent {
     @JoinColumn(name = "student_id", insertable = false, updatable = false)
     private Student studentEntity;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "answers_certifications_id", insertable = false, updatable = false)
+    @JsonManagedReference
     private List<AnswersCertifications> answersCertifications;
 
     @CreationTimestamp
