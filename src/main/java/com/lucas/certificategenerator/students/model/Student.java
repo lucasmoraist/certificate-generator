@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.lucas.certificategenerator.certification.model.CertificationStudent;
 
 import jakarta.persistence.Column;
@@ -16,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,15 +26,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity(name = "t_cg_student")
 @Table(name = "t_cg_student")
+@Builder
 public class Student {
-    
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(unique = true, nullable = false)
     private String email;
 
     @OneToMany(mappedBy = "studentEntity")
+    @JsonBackReference 
     private List<CertificationStudent> certificationStudent;
 
     @CreationTimestamp
