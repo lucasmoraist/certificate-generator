@@ -1,6 +1,7 @@
 package com.lucas.certificategenerator.certification.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,14 @@ public class CertificationController {
     private CertificationAnswerService service;
 
     @PostMapping("/answer")
-    public CertificationAnswerDTO certificationAnswer(@RequestBody CertificationAnswerDTO dto) {
-        return this.service.execute(dto);
+    public ResponseEntity<Object> certificationAnswer(@RequestBody CertificationAnswerDTO dto) throws Exception{
+        try{
+            var result = this.service.execute(dto);
+            return ResponseEntity.ok().body(result);
+        }catch(Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        
     }
 
 }
