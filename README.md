@@ -29,6 +29,7 @@ docker ps
 ## Endpoints
 
 `POST` /nlw/students/verifyIfHasCertification
+<br>
 **Request body**
 ```
 {
@@ -42,6 +43,7 @@ docker ps
 | 200 | Ok |
 
 `POST` /nlw/certification/answer
+<br>
 **Request Body**
 ```
 {
@@ -70,6 +72,7 @@ docker ps
 | 400 | Bad request |
 
 `GET` /nlw/ranking/top10
+<br>
 **Response**
 ```
 [
@@ -107,6 +110,7 @@ docker ps
 | 404 | Not found |
 
 `GET` /nlw/question/{technology} -> JAVA
+<br>
 **Response**
 ```
 {
