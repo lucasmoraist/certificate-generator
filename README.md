@@ -28,6 +28,10 @@ docker ps
 
 ## Endpoints
 
+`localhost:8000/swagger-ui.html `
+- Este comando irá abrir uma documentação criada com o springdoc openapi
+- Lá além de ver as requisições é possível fazer alguns testes simples e rápidos
+
 `POST` /nlw/students/verifyIfHasCertification
 <br>
 **Request body**
